@@ -4,7 +4,6 @@ import {TestService} from '../../services/test/test.service';
 @Component({
   selector: 'app-testa',
   templateUrl: 'testa.template.html',
-  providers: [TestService]
 })
 
 export class TestaComponent {
