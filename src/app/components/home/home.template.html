@@ -1,4 +1,9 @@
 <app-header></app-header>
 <app-menu></app-menu>
 <div>Home</div>
+<input type="text" autosearch (results)="getArtists($event)">
+<div *ngFor="let artist of artists">
+  {{artist}}
+</div>
+
 <app-list></app-list>
