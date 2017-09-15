@@ -11,6 +11,9 @@ import {MenuComponent} from './components/menu/menu.component';
 import {HeaderComponent} from './components/header/header.component';
 import { ListComponent } from './components/list/list.component';
 import {AutosearchDirective} from './directives/autosearch/autosearch';
+import { ChildNodeComponent } from './components/child-node/child-node.component';
+import { Child2Component } from './components/child2/child.component';
+import { ChildComponent } from './components/child/child.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import {AutosearchDirective} from './directives/autosearch/autosearch';
     MenuComponent,
     HeaderComponent,
     ListComponent,
-    AutosearchDirective
+    AutosearchDirective,
+    ChildNodeComponent,
+    ChildComponent,
+    Child2Component
   ],
   imports: [
     BrowserModule,

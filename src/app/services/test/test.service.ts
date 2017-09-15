@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
+import { User } from '../user/user.interface';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class TestService {
@@ -8,6 +10,7 @@ export class TestService {
   // Observable string sources
   private missionAnnouncedSource = new Subject<string>();
   private missionConfirmedSource = new Subject<string>();
+  private obs: BehaviorSubject<User> = BehaviorSubject.create();
 
   // Observable string streams
   public missionAnnounced$: Observable<string> = this.missionAnnouncedSource.asObservable();
@@ -22,5 +25,13 @@ export class TestService {
 
   confirmMission(astronaut: string) {
     this.missionConfirmedSource.next(astronaut);
+  }
+
+  public getObs(): BehaviorSubject<User> {
+    return this.obs;
+  }
+
+  public setObs(user: User) {
+    this.obs.next(user);
   }
 }

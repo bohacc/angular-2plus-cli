@@ -20,26 +20,26 @@ export class AutosearchDirective implements OnInit {
   }
 
   ngOnInit() {
-    console.log('Observable.fromEvent 00');
+    // console.log('Observable.fromEvent 00');
     this.onInit();
   }
 
   onInit() {
-    console.log('Observable.fromEvent 0');
+    // console.log('Observable.fromEvent 0');
     Observable.fromEvent(this.elementRef.nativeElement, 'keyup')
       .map(e => {
         // console.log(e);
         return e['target'].value;
       })
       .filter(text => {
-        console.log(text);
+        // console.log(text);
         return text.length > 2;
       })
       // .map(name => this.service.artistSearch(name))
       // .mergeAll()
       .subscribe(data => {
-        console.log('Observable.fromEvent');
-        console.log(data);
+        // console.log('Observable.fromEvent');
+        // console.log(data);
         this.results.next(data);
         // this.results.next(data['response']['artists']);
       });
